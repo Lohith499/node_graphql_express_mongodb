@@ -36,8 +36,6 @@ let RootMutationType = new GraphQLObjectType({
                         if (err) throw new Error(err)
                         await newCustomer.save(async (err, doc) => {
                             if (err) reject({ "message": "Internal Server Error" });
-                            console.log("doc")
-                            console.log(doc)
                             return resolve(doc);
                         });
                     });
