@@ -8,6 +8,6 @@ let itemSchema = new schema({
     price: Number
 });
 
-let Item = mongoose.model("Item", itemSchema);
+let Items = mongoose.model("Items", itemSchema);
 
-module.exports = Item;
+module.exports = Items;

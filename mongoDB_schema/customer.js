@@ -5,9 +5,9 @@ const schema = mongoose.Schema;
 let customerSchema = new schema({
     firstname: String,
     lastname: String,
-    mobile: Number,
+    mobile: String,
     city: String
-});
+},{versionKey: false});
 
 let Customer = mongoose.model("Customer", customerSchema);
 
