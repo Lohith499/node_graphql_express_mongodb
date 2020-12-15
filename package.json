@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app",
-    "dev" : "node app.js"
+    "dev": "node app.js"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +16,11 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^15.0.0",
-    "mongoose": "^5.9.7"
+    "mongoose": "^5.9.7",
+    "bl": ">=2.2.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "bl": ">=2.2.1"
   }
 }
