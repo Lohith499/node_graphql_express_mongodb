@@ -9,6 +9,6 @@ let customerSchema = new schema({
     city: String
 },{versionKey: false});
 
-let Customer = mongoose.model("Customer", customerSchema);
+let Customer = mongoose.model("customers", customerSchema);
 
 module.exports = Customer;

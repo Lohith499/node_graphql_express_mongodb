@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const items = require("./mongoDB_schema/item");
 const customer = require("./mongoDB_schema/customer");
 const order = require("./mongoDB_schema/order");
-
+const address=require('./mongoDB_schema/address');
 route.get("/", (req, res, next) => {
     res.status(200).json({ message: "Welcome to Home API", host : process.env.DB_HOST });
 });
@@ -20,6 +20,15 @@ route.get("/items", async(req, res, next) => {
 });
 
 
+
+route.get("/customers", async(req, res, next) => {
+    const customerList = await customer.find({ });
+    try {
+      res.send(customerList);
+    } catch (err) {
+      res.status(500).send(err);
+    }
+});
 route.post("/item", (req, res, next) => {
    // mongoose.connect(config.DB_CONNECT, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
      //   if (err) throw new Error(err)
@@ -86,5 +95,15 @@ route.post("/order", (req, res, next) => {
     });
 });
 
+
+
+route.post("/address", (req, res, next) => {
+    let newAddress=new address(req.body)
+
+        newAddress.save((err, doc) => {
+            if (err) return res.status(500).json({ "message": "Internal Server Error" });
+            return res.status(200).json({ "message": "Succesfully Created Address", data: doc })
+        })
+});
 
 module.exports = route;

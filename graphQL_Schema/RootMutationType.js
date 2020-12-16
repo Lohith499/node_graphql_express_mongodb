@@ -1,9 +1,4 @@
-const {
-    GraphQLObjectType,
-    GraphQLString,
-    GraphQLInt,
-    GraphQLList
-} = require("graphql");
+const {GraphQLObjectType,GraphQLString,GraphQLInt,GraphQLList} = require("graphql");
 let mongoose = require("mongoose");
 const m_item = require("../mongoDB_schema/item");
 const m_customer = require("../mongoDB_schema/customer");
